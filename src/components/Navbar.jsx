@@ -11,9 +11,9 @@ const Navbar = ({ search, setSearch, searching }) => {
         </em>
       </div>
       <div className="serchbar">
-        <form onSubmit={searching} className="bg-white px-1 rounded-md">
+        <form onSubmit={searching} className="bg-white px-1 rounded-md flex">
           <input
-            className="p-1 md:w-[18rem]  border-r-2"
+            className="p-1 md:w-[18rem] lg:w-[18rem] w-32  border-r-2"
             type="text"
             placeholder="search something..."
             value={search}
