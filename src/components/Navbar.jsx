@@ -4,7 +4,7 @@ import React from "react";
 
 const Navbar = ({ search, setSearch, searching }) => {
   return (
-    <nav className="bg-slate-800 p-4 h-12 flex items-center justify-between">
+    <nav className="bg-slate-800 p-4 h-12 border-b-[1px] bod flex items-center justify-between">
       <div className="logo">
         <em className="text-white font-bold text-xl">
           My<span className="text-red-400">Tube</span>
