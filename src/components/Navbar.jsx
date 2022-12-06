@@ -2,7 +2,7 @@ import React from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = ({ search, setSearch, searching }) => {
+const Navbar = ({ selected, setSelected }) => {
   return (
     <nav className="bg-slate-800  lg:fixed lg:w-[100vw] p-4 h-12 border-b-[1px] bod flex items-center sm:fixed sm:top-0 justify-between">
       <div className="logo">
@@ -11,15 +11,18 @@ const Navbar = ({ search, setSearch, searching }) => {
         </em>
       </div>
       <div className="serchbar">
-        <form onSubmit={searching} className="bg-white px-1 rounded-md flex">
+        <form
+          onSubmit={(e) => e.preventDefault}
+          className="bg-white px-1 rounded-md md:mx-8 flex"
+        >
           <input
             className="p-1 md:w-[18rem] lg:w-[18rem] w-32  border-r-2"
             type="text"
             placeholder="search something..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={selected}
+            onChange={(e) => setSelected(e.target.value)}
           />
-          <input className="text-black px-1" type="submit" value="Search" />
+          {/* <input className="text-black px-1" type="submit" value="Search" /> */}
         </form>
       </div>
     </nav>

@@ -16,7 +16,7 @@ const Feed = ({ selected, setSelected }) => {
     };
 
     fetch(
-      "https://youtube-v31.p.rapidapi.com/search?q=new&part=snippet%2Cid&regionCode=US&maxResults=50&order=date",
+      `https://youtube-v31.p.rapidapi.com/search?q=${selected}&part=snippet%2Cid&regionCode=US&maxResults=500&order=date`,
       options
     )
       .then((response) => response.json())
@@ -24,13 +24,15 @@ const Feed = ({ selected, setSelected }) => {
       .catch((err) => console.error(err));
   }, [selected]);
   return (
-    <div className="flex-col lg:flex-row lg:h-[100vh]  h-[100%]  bg-slate-600">
+    <div className="flex-col lg:flex-row lg:h-[100%] md:h-[100%] h-[100vh]  bg-white">
       <SideBar selected={selected} setSelected={setSelected} />
-      <div className="videofeed lg:fixed lg:top-[3rem] lg:left-[15rem]">
-        <h1 className="text-white font-bold text-2xl p-4 lg:text-3xl">
+      <div className="videofeed lg:h-[100%]  lg:top-[3rem] lg:left-[15rem]">
+        <h1 className="text-slate-700 font-bold text-2xl p-4 lg:text-3xl">
           {selected} <span className="text-red-400">videos</span>
         </h1>
-        <Videos videos={videos} />
+        <div className="flex-col">
+          <Videos videos={videos} />
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import ChannelCard from "./ChannelCard";
 const Videos = ({ videos }) => {
   console.log(videos);
   return (
-    <div className="wrapper flex flex-wrap w-[100vw]  h-[100vh]">
+    <div className="wrapper flex item-center flex-wrap w-[100vw]  h-[100vh]">
       {videos.map((item, idx) => (
         <div className="box" key={idx}>
           {item.id.videoId && <VideoCard video={item} />}

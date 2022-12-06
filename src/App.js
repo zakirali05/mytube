@@ -7,12 +7,11 @@ import SerchFeed from "./pages/SearchFeed";
 import { useState } from "react";
 
 const App = () => {
-  const [search, setSearch] = useState("");
   const [selected, setSelected] = useState("New");
-  const searching = () => {};
+
   return (
     <Router>
-      <Navbar search={search} setSearch={setSearch} searching={searching} />
+      <Navbar selected={selected} setSelected={setSelected} />
       <Routes>
         <Route
           path="/"
