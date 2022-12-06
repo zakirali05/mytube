@@ -8,12 +8,16 @@ import { useState } from "react";
 
 const App = () => {
   const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState("New");
   const searching = () => {};
   return (
     <Router>
       <Navbar search={search} setSearch={setSearch} searching={searching} />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route
+          path="/"
+          element={<Feed selected={selected} setSelected={setSelected} />}
+        />
         <Route path="/video/:id" element={<VideoDetail />} />
         <Route path="/channel/:id" element={<ChannelDetail />} />
         <Route path="/search" element={<SerchFeed />} />
